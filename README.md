@@ -1,3 +1,3 @@
-# `starter`
+# `mathml-latex`
 
-This was made through Section 3 of the course.
+MathML to Latex Converter built with React.
