@@ -11,14 +11,23 @@ class App extends Component {
   state = { convertedValue: '', value: '' };
 
   componentDidMount() {
-    this.refs.editor1.getCodeMirror().setSize(null, window.innerWidth / 2);
-    this.refs.editor2.getCodeMirror().setSize(null, window.innerWidth / 2);
+    this.updateDimensions();
+    window.addEventListener('resize', () => this.updateDimensions());
     if (localStorage.getItem('value')) {
       this.updateCode(localStorage.getItem('value'));
       this.refs.editor1.getCodeMirror().setValue(localStorage.getItem('value'));
     } else {
       localStorage.setItem('value', '');
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize');
+  }
+
+  updateDimensions() {
+    this.refs.editor1.getCodeMirror().setSize(null, window.innerHeight / 1.5);
+    this.refs.editor2.getCodeMirror().setSize(null, window.innerHeight / 1.5);
   }
 
   updateCode(newValue) {
@@ -47,7 +56,7 @@ class App extends Component {
               onChange={(newValue) => this.updateCode(newValue)}
             />
           </div>
-          <div className='col-md-2'></div>
+          <div className="col-md-2"></div>
           <div style={style} className="col-md-5">
             <CodeMirror
               ref="editor2"
