@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="App row">
-          <div style={style} className="col-md-6">
+          <div style={style} className="col-md-5">
             <CodeMirror
               ref="editor1"
               mode="xml"
@@ -47,7 +47,8 @@ class App extends Component {
               onChange={(newValue) => this.updateCode(newValue)}
             />
           </div>
-          <div style={style} className="col-md-6">
+          <div className='col-md-2'></div>
+          <div style={style} className="col-md-5">
             <CodeMirror
               ref="editor2"
               options={{ readOnly: true }}
