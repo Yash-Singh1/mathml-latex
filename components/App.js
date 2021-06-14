@@ -53,6 +53,7 @@ class App extends Component {
               ref="editor1"
               mode="xml"
               value={this.state.value}
+              options={{ autofocus: true }}
               onChange={(newValue) => this.updateCode(newValue)}
             />
           </div>
