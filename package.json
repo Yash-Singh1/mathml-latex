@@ -21,5 +21,8 @@
     "start": "parcel index.html",
     "dev": "parcel index.html",
     "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "sass": "^1.50.0"
   }
 }
