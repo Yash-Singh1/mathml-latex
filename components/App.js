@@ -5,7 +5,7 @@ import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/stex/stex';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/seti.css';
-import '../index.css';
+import '../index.scss';
 
 class App extends Component {
   state = { convertedValue: '', value: '' };
@@ -41,14 +41,10 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      border: 'solid'
-    };
-
     return (
       <div className="container-fluid">
         <div className="App row">
-          <div style={style} className="col-md-5">
+          <div className="col-md-5 editor">
             <CodeMirror
               ref="editor1"
               mode="xml"
@@ -58,7 +54,7 @@ class App extends Component {
             />
           </div>
           <div className="col-md-2"></div>
-          <div style={style} className="col-md-5">
+          <div className="col-md-5 editor">
             <CodeMirror
               ref="editor2"
               options={{ readOnly: true }}
