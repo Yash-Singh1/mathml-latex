@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     this.updateDimensions();
-    window.addEventListener('resize', () => this.updateDimensions());
+    document.addEventListener('resize', () => this.updateDimensions());
     if (localStorage.getItem('value')) {
       this.updateCode(localStorage.getItem('value'));
       this.refs.editor1.getCodeMirror().setValue(localStorage.getItem('value'));
